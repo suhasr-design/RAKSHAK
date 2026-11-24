@@ -1,0 +1,20 @@
+[project]
+name = "rakshak"
+version = "0.1.0"
+description = "Everyday AI assistant whose every action passes a signed, task-scoped permission check, built on VAJRA."
+requires-python = ">=3.11"
+dependencies = [
+    "vajra-mcp @ git+https://github.com/ImpactX26/VAJRA",
+    "httpx",
+    "starlette",
+    "sse-starlette",
+    "uvicorn",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "pytest-asyncio>=0.23"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_mode = "auto"
+pythonpath = ["."]
