@@ -73,13 +73,16 @@ inline delivery guarded by task tokens, the permission dialog, token card and ac
 
 ## Run the demo
 
-Requires Python 3.11+ and Node 18+.
+**Windows, one click:** download the repo and double-click `run_demo.bat`. It needs only Python 3.11+;
+the web UI is prebuilt. See [DEMO_SETUP.md](DEMO_SETUP.md).
+
+Manual setup (any OS, Python 3.11+):
 
 ```bash
 python -m venv .venv
 .venv\Scripts\activate                     # Windows (source .venv/bin/activate on macOS/Linux)
-pip install -e .[dev]                      # installs VAJRA from github.com/ImpactX26/VAJRA too
-cd demo/frontend && npm install && npm run build && cd ../..
+pip install -r requirements.txt            # installs VAJRA from github.com/ImpactX26/VAJRA too
+# optional, to rebuild the UI (Node 18+): cd demo/frontend && npm install && npm run build && cd ../..
 echo GROQ_API_KEY=gsk_your_key > .env      # optional: live model (free key at console.groq.com)
 python -m demo.backend                     # open http://127.0.0.1:8000
 python -m pytest                           # 12 tests incl. end-to-end attack runs
