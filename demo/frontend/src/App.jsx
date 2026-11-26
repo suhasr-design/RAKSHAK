@@ -28,10 +28,9 @@ export default function App() {
         setStatus(st)
         setScenarios(sc)
         setSelected(sc[0]?.id)
-        if (st.groq_available) {
-          setProvider('groq')
-          setModel(st.groq_model)
-        }
+        // Default to the offline worst-case model: the attack reproduces every time, with no network or API key.
+        // Groq (live) stays one click away in the LLM menu.
+        if (st.groq_available) setModel(st.groq_model)
       })
       .catch(() => setLoadError('Cannot reach the demo backend. Start it with: python -m demo.backend'))
   }, [])
