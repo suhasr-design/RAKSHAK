@@ -1,1 +1,9 @@
--e .[dev]
+# Exact versions verified with the demo on Windows (Python 3.11+).
+vajra-mcp @ https://github.com/ImpactX26/VAJRA/archive/714540094c3ac0447fc35f67aff8b940fcf08b7a.zip
+mcp==2.3.0
+httpx==0.28.1
+starlette==1.10.0
+sse-starlette==3.7.1
+uvicorn==0.54.0
+pytest==9.2.0
+pytest-asyncio==1.5.0
